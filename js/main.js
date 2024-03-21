@@ -68,6 +68,26 @@ class ProgramWindow {
         // Se establece el nuevo tamaño
         this.size.resize(newSize.width, newSize.height);
     }
+    move(newPosition) {
+        // Si la nueva posición es menor a 0, se establece en 0
+        if (newPosition.x < 0) {
+            newPosition.x = 0;
+        }
+        if (newPosition.y < 0) {
+            newPosition.y = 0;
+        }
+
+        // Si la nueva posición es mayor al tamaño de la pantalla, se establece la posición en el borde
+        if (newPosition.x + this.size.width > this.screenSize.width) {
+            newPosition.x = this.screenSize.width - this.size.width;
+        }
+        if (newPosition.y + this.size.height > this.screenSize.height) {
+            newPosition.y = this.screenSize.height - this.size.height;
+        }
+
+        // Se establece la nueva posición
+        this.position.move(newPosition.x, newPosition.y);
+    }   
 }
 
 //const programWindow = new ProgramWindow();
