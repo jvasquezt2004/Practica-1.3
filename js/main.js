@@ -70,10 +70,29 @@ class ProgramWindow {
     }
 }
 
-const programWindow = new ProgramWindow();
-console.log(programWindow.screenSize.width);
+//const programWindow = new ProgramWindow();
+//console.log(programWindow.screenSize.width);
 
-const newSize = new Size(600, 400);
-programWindow.resize(newSize);
-console.log(programWindow.size.width);
-console.log(programWindow.size.height);
+//const newSize = new Size(600, 400);
+//programWindow.resize(newSize);
+//console.log(programWindow.size.width);
+//console.log(programWindow.size.height);
+
+//6Función para cambiar una ventana del programa
+function changeWindow(window){
+    window.size.width = 400;
+    window.size.height = 300;
+    window.position.x = 100;
+    window.position.y = 150;
+    return window;
+}
+
+//intancia programWindow
+let myWindow = new
+ProgramWindow();
+
+myWindow = changeWindow(myWindow);
+
+const programWindow = new ProgramWindow();
+changeWindow(ProgramWindow);
+ProgramWindow.size.width;
