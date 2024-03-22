@@ -1,3 +1,4 @@
+// Class Size
 class Size {
     constructor(width = 80, height = 60) {
         this.width = width;
@@ -10,6 +11,7 @@ class Size {
     }
 }
 
+// Clase Position
 class Position {
     constructor(x = 0, y = 0) {
         this.x = x;
@@ -21,25 +23,6 @@ class Position {
         this.y = newY;
     }
 }
-
-// const size = new Size(1080, 764);
-// console.log(size.width);
-// console.log(size.height);
-
-// size.resize(1920, 1080);
-
-// console.log(size.width);
-// console.log(size.height);
-
-// const point = new Position();
-// console.log(point.x);
-// console.log(point.y);
-
-// point.move(100, 200);
-
-// console.log(point.x);
-// console.log(point.y);
-
 
 // Clase ProgramWindow
 class ProgramWindow {
@@ -68,6 +51,7 @@ class ProgramWindow {
         // Se establece el nuevo tamaño
         this.size.resize(newSize.width, newSize.height);
     }
+
     move(newPosition) {
         // Si la nueva posición es menor a 0, se establece en 0
         if (newPosition.x < 0) {
@@ -90,15 +74,7 @@ class ProgramWindow {
     }   
 }
 
-//const programWindow = new ProgramWindow();
-//console.log(programWindow.screenSize.width);
-
-//const newSize = new Size(600, 400);
-//programWindow.resize(newSize);
-//console.log(programWindow.size.width);
-//console.log(programWindow.size.height);
-
-//6Función para cambiar una ventana del programa
+// Función para cambiar una ventana del programa
 function changeWindow(window){
     window.size.width = 400;
     window.size.height = 300;
@@ -107,12 +83,45 @@ function changeWindow(window){
     return window;
 }
 
-//intancia programWindow
-let myWindow = new
-ProgramWindow();
+// PRUEBAS
+console.log('Clase Size');
+const size = new Size(1080, 764);
+console.log(size.width);
+console.log(size.height);
 
-myWindow = changeWindow(myWindow);
+size.resize(1920, 1080);
+console.log("Nuevo tamaño");
+console.log(size.width);
+console.log(size.height);
 
+console.log('------\nClase Position');
+const point = new Position();
+console.log(point.x);
+console.log(point.y);
+console.log("Nueva posición");
+point.move(100, 200);
+console.log(point.x);
+console.log(point.y);
+
+console.log('------\nClase ProgramWindow'); 
 const programWindow = new ProgramWindow();
-changeWindow(ProgramWindow);
-ProgramWindow.size.width;
+console.log("Tamaño de la pantalla");
+console.log(programWindow.screenSize.width);
+
+const newSize = new Size(600, 400);
+programWindow.resize(newSize);
+console.log("Nuevo tamaño");
+console.log(programWindow.size.width);
+console.log(programWindow.size.height);
+
+const newPosition = new Position(50, 100);
+programWindow.move(newPosition);
+console.log("Nueva posición");
+console.log(programWindow.position.x);
+console.log(programWindow.position.y);
+
+console.log('------\nFunción changeWindow');
+
+changeWindow(programWindow);
+console.log("Nuevo tamaño");
+console.log(programWindow.size.width);
